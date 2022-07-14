@@ -1,0 +1,27 @@
+.create{
+    height: 170px;
+    width: 500px;
+}
+.create header{
+    display: flex;
+    justify-content: flex-end;
+}
+.create header span{
+    color: #ccc;
+    padding: 5px;
+}
+.create textarea{
+    height: 100px;
+    width: 100%;
+    border: 0;
+}
+.create footer{
+    display: flex;
+    justify-content: flex-end;
+}
+.create button{
+    border: 0;
+    border-radius: 2px;
+    background-color: #4469ae;
+    color: white;
+}

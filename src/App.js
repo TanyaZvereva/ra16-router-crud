@@ -7,13 +7,11 @@ import PostCreate from './Components/Post-create';
 
 function App() {
   return (
-    <div className="App">
       <Routes>
-        <Route path='/'element={<PostList/>}/>
-        <Route path='create'elememt={<PostCreate/>}/>
+        <Route path='/posts'elememt={<PostCreate/>}/>
         <Route path='edit'element={<PostWatch/>}/>
+        <Route path='/'element={<PostList/>}/>
       </Routes>
-    </div>
   );
 }
 
