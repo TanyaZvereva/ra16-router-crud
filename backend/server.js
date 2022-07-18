@@ -19,16 +19,16 @@ router.get('/posts', async (ctx, next) => {
 });
 
 router.post('/posts', async(ctx, next) => {
-    const {id, content} = ctx.request.body;
-
+    const {id, content} = ctx.body;
+    console.log(id, content, ctx)
     if (id !== 0) {
         posts = posts.map(o => o.id !== id ? o : {...o, content: content});
         ctx.response.status = 204;
         return;
     }
 
-    posts.push({...ctx.request.body, id: nextId++, created: Date.now()});
-    ctx.response.status = 204;
+    posts.push({...ctx.body, id: nextId++, created: Date.now()});
+    ctx.response.status = 201;
 });
 
 router.delete('/posts/:id', async(ctx, next) => {
@@ -42,6 +42,6 @@ router.delete('/posts/:id', async(ctx, next) => {
 
 app.use(router.routes()).use(router.allowedMethods());
 
-const port = process.env.PORT || 7777;
+const port = process.env.PORT || 6666;
 const server = http.createServer(app.callback());
 server.listen(port, () => console.log('server started'));

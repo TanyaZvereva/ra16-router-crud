@@ -8,7 +8,7 @@ const PostCreate = () => {
     const navigate = useNavigate()
     const [sendNewPublish] = useFetch()
     const handlePublish = (value)=>{
-        sendNewPublish('http://localhost:7777/posts', {method: 'POST', body: {content:value}}, ()=>navigate('/'))
+        sendNewPublish('http://localhost:6666/posts', {method: 'POST', body: JSON.stringify({content:value, id: 0})}, ()=>navigate('/'))
     }
     return <section className="create">
         <header>

@@ -8,8 +8,8 @@ import PostCreate from './Components/Post-create';
 function App() {
   return (
       <Routes>
-        <Route path='/posts'elememt={<PostCreate/>}/>
-        <Route path='edit'element={<PostWatch/>}/>
+        <Route path='/posts/new'element={<PostCreate/>}/>
+        <Route path='/edit'element={<PostWatch/>}/>
         <Route path='/'element={<PostList/>}/>
       </Routes>
   );

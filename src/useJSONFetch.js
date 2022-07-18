@@ -7,13 +7,16 @@ export const useJsonFetch = (url, opts, cb) => {
 
   useEffect(() => {
     setIsLoading(true)
-    fetch(url, opts)
+    const myHeaders = new Headers()
+    myHeaders.append('Content-Type','application/json')
+
+    fetch(url, {...opts, headers: myHeaders})
       .then(response => response.json())
       .then(data => setData(data))
       .catch(err => setError(err.message))
       .finally(() => {
         setIsLoading(false)
-        cb()
+        cb && cb()
     } )
   }, [])
 
