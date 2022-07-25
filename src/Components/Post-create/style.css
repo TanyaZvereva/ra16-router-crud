@@ -13,7 +13,6 @@
 .create textarea{
     height: 100px;
     width: 100%;
-    border: 0;
 }
 .create footer{
     display: flex;
@@ -24,4 +23,7 @@
     border-radius: 2px;
     background-color: #4469ae;
     color: white;
+}
+.create .remove-btn {
+    background-color: #c7753f;
 }

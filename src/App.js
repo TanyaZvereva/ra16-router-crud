@@ -9,7 +9,7 @@ function App() {
   return (
       <Routes>
         <Route path='/posts/new'element={<PostCreate/>}/>
-        <Route path='/edit'element={<PostWatch/>}/>
+        <Route path='/edit/:id'element={<PostWatch/>}/>
         <Route path='/'element={<PostList/>}/>
       </Routes>
   );
