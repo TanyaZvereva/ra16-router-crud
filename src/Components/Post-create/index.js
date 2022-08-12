@@ -12,7 +12,7 @@ const PostCreate = () => {
     }
     return <section className="create">
         <header>
-            <span>X</span>
+            <span onClick={()=> navigate('/')}>X</span>
         </header>
         <div><textarea onChange={(e)=>setContent(e.target.value)}></textarea></div>
         <footer>

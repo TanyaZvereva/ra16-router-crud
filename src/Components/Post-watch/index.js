@@ -10,7 +10,8 @@ const PostWatch = () => {
     const navigate = useNavigate()
     const {id} = useParams()
     useEffect(()=>{
-        newList && newList.length && setContent(newList[id -1].content)
+        console.log(newList)
+        newList && newList.length && setContent(newList.find(f=>f.id==id).content)
     },[newList && newList.length, id])
 
     const handleEditPost = (value, id) => () => {
@@ -23,9 +24,11 @@ const PostWatch = () => {
     }
 
     return <div className="create">
-        <input onChange={e => setContent(e.target.value)} defaultValue={newList && newList.length && newList[id - 1].content}/>
-        <button onClick={handleEditPost(content, id)}>Опубликовать</button>
+        <div className='card'>
+        <input onChange={e => setContent(e.target.value)} defaultValue={newList && newList.length && newList.find(f=>f.id==id).content}/><span onClick={()=> navigate('/')}>X</span><br/>
+        <button onClick={handleEditPost(content, id)}>Сохранить</button>
         <button className='remove-btn' onClick={handleRemovePost(id)}>Удалить</button>
+            </div>
     </div>
 }
 

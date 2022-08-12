@@ -8,8 +8,9 @@ const PostList = () => {
         <NavLink to="/posts/new">Create post</NavLink>
         {isLoading && <div>Данные загружаются</div>}
         {newList && newList.map(post => {
-            return <div key={post.id} onClick={() => navigate('/edit/'+ post.id)}>
+            return <div className='card' key={post.id}>
                 <h2>{post.content}</h2>
+                <button onClick={() => navigate('/edit/'+ post.id)}>Редактировать</button>
             </div>
         })}
     </section>
